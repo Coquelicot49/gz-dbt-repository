@@ -1,16 +1,25 @@
 version: 2
-
 sources:
   - name: gz_raw_data
-    config:
-      alias: raw
     tables:
       - name: raw_gz_sales
-        config:
-          alias: sales
+        description: tableau des ventes
+        columns:
+          - name: orders_id
+            tests:
+              - unique
+              - not_null
       - name: raw_gz_product
-        config:
-          alias: product
+        description: tableau des produits
+        columns:
+          - name: products_id
+            tests:
+              - unique
+              - not_null
       - name: raw_gz_ship
-        config:
-          alias: ship
+        description: tableau des livraisons
+        columns:
+          - name: orders_id
+            tests:
+              - unique
+              - not_null
