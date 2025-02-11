@@ -6,9 +6,12 @@ sources:
         description: tableau des ventes
         columns:
           - name: orders_id
-            tests:
-              - unique
-              - not_null
+          - name: pdt_id
+        tests:
+          - unique:
+              column_name: "(orders_id || '_' || pdt_id)"
+          - not_null:
+              column_name: "(orders_id || '_' || pdt_id)"
       - name: raw_gz_product
         description: tableau des produits
         columns:
