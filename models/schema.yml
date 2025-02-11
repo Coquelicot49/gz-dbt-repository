@@ -4,9 +4,13 @@ sources:
     tables:
       - name: raw_gz_sales
         description: tableau des ventes
+        loaded_at_field: CAST(date_date AS TIMESTAMP)
+        freshness:
+          warn_after: {count: 90, period: day}
         columns:
           - name: orders_id
           - name: pdt_id
+          - name: date_date
         tests:
           - unique:
               column_name: "(orders_id || '_' || pdt_id)"
