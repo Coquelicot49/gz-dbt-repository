@@ -159,7 +159,7 @@ models:
    - name: int_campaigns_day
      columns: 
       - name: date_date
-     tests:
-       - unique
-       - not_null
+        tests:
+          - unique
+          - not_null
            
