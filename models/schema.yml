@@ -145,4 +145,21 @@ models:
        - name: ship_cost
          description: shipping cost paid by Greenweez to the carrier/logistics provider
 
-
+   - name: int_campaigns
+     description: recap des campagnes de pubs via 4 presta
+     columns:
+       - name: date_date
+       - name: campaign_key
+     tests:
+       - unique : 
+          column_name: "(date_date || '_' || campaign_key)"
+       - not_null : 
+           column_name: "(date_date || '_' || campaign_key)"
+      
+   - name: int_campaigns_day
+     columns: 
+      - name: date_date
+     tests:
+       - unique
+       - not_null
+           
