@@ -30,6 +30,14 @@ sources:
             tests:
               - unique
               - not_null
+      - name: raw_gz_adwords
+        description: infos adds from adwords
+      - name: raw_gz_bing
+        description: infos adds from bing
+      - name: raw_gz_criteo
+        description: infos adds from criteo
+      - name: raw_gz_facebook
+        description: infos adds from facebook
 
 models:
    # Staging #
