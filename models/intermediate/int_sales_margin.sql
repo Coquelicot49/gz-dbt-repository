@@ -1,4 +1,4 @@
-
+WITH STEP AS (
   SELECT
     SALES.products_id
     ,SALES.date_date
@@ -11,4 +11,8 @@
   FROM {{ ref('sales') }} SALES
   LEFT JOIN {{ ref('product') }} PRODUCT
   ON PRODUCT.products_id = SALES.products_id
-
+)
+ SELECT 
+ *
+,{{ margin_percent('revenue', 'purchase_cost' ) }} AS margin_percent
+FROM STEP
