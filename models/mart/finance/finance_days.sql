@@ -1,5 +1,4 @@
  -- finance_days.sql
-{{ config(materialized='finance_days') }}
 
  SELECT
      date_date
